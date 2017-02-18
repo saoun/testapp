@@ -1,0 +1,27 @@
+<%= form_for @job do |f| %>
+
+
+<% if @job.errors.present? %>
+<ul>
+<% @job.errors.full_messages.each do |message| %>
+  <li><%=message %></li>
+<% end %>
+</ul>
+<% end %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description, size: '60x6' %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
